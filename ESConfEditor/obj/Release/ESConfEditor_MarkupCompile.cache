@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\
+C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Release\
 ESConfEditor
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\App.xaml
 11151548125
 
-11-1690800580
+7-1977288
 13738642453
 MainWindow.xaml;
 

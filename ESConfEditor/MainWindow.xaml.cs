@@ -239,6 +239,17 @@ namespace ESConfEditor
             MessageBoxResult result = MessageBox.Show("File updated", "Saved", MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
 
+        private void buttonOpenXML_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/C " + ESConf.FileLocation;
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if(!changesMade)
