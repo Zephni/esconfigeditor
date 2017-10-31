@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace ESConfEditor
 {
@@ -17,8 +19,6 @@ namespace ESConfEditor
         {
             this.SystemObjects = new List<SystemObject>();
 
-            ESConf.FileLocation = Environment.GetEnvironmentVariable("HOMEDRIVE") + Environment.GetEnvironmentVariable("HOMEPATH") + "/.emulationstation/es_systems.cfg";
-
             XmlDocument xmlDoc = this.LoadXML(ESConf.FileLocation);
             this.SystemObjects = this.BuildSystemObjectsFromXML(xmlDoc, "/systemList/system");
         }
@@ -26,7 +26,17 @@ namespace ESConfEditor
         public XmlDocument LoadXML(string location)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(location);
+
+            try
+            {
+                xmlDoc.Load(location);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("es_systems.cfg is not a valid XML document, please fix and try again.\n\n("+e.Message+")", "Invalid XML document", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                Application.Current.Shutdown();
+            }
+
             return xmlDoc;
         }
 

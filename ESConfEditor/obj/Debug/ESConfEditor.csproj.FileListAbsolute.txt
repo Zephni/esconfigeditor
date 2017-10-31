@@ -15,3 +15,5 @@ c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfE
 C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Release\ESConfEditor.exe.config
 C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Release\ESConfEditor.exe
 C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Release\ESConfEditor.pdb
+C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ChooseLocation.g.cs
+C:\Users\craig.dennis\Documents\Visual Studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ChooseLocation.baml
