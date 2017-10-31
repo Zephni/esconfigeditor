@@ -49,6 +49,41 @@ namespace ESConfEditor
             if (Number < 0)
                 Number = 0;
 
+            if(systemList.Items.Count == 0)
+            {
+                if (systemList.Items.Count == 0)
+                {
+                    buttonMoveUp.IsEnabled = false;
+                    buttonMoveDown.IsEnabled = false;
+                    buttonCopy.IsEnabled = false;
+                    buttonRemove.IsEnabled = false;
+                    textBoxFullName.IsEnabled = false;
+                    textBoxName.IsEnabled = false;
+                    textBoxPath.IsEnabled = false;
+                    textBoxExt.IsEnabled = false;
+                    textBoxCommand.IsEnabled = false;
+                    textBoxPlatform.IsEnabled = false;
+                    textBoxTheme.IsEnabled = false;
+                }
+
+                currentIndex = 0;
+                return;
+            }
+            else
+            {
+                buttonMoveUp.IsEnabled = true;
+                buttonMoveDown.IsEnabled = true;
+                buttonCopy.IsEnabled = true;
+                buttonRemove.IsEnabled = true;
+                textBoxFullName.IsEnabled = true;
+                textBoxName.IsEnabled = true;
+                textBoxPath.IsEnabled = true;
+                textBoxExt.IsEnabled = true;
+                textBoxCommand.IsEnabled = true;
+                textBoxPlatform.IsEnabled = true;
+                textBoxTheme.IsEnabled = true;
+            }
+
             systemList.SelectedIndex = Number;
             currentIndex = Number;
             UpdateForm();
@@ -199,6 +234,9 @@ namespace ESConfEditor
 
         private void buttonCopy_Click(object sender, RoutedEventArgs e)
         {
+            if (systemList.Items.Count == 0)
+                return;
+
             SystemObject systemObject = new SystemObject();
             systemObject.fullname = esConf.SystemObjects[this.currentIndex].fullname + " - New";
             systemObject.name = esConf.SystemObjects[this.currentIndex].name;
@@ -215,6 +253,9 @@ namespace ESConfEditor
 
         private void buttonAddNew_Click(object sender, RoutedEventArgs e)
         {
+            if (this.currentIndex == 0)
+                this.currentIndex = -1;
+
             SystemObject newObject = new SystemObject();
             newObject.fullname = "New item";
             esConf.SystemObjects.Insert(this.currentIndex+1, newObject);
