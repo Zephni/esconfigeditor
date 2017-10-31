@@ -51,20 +51,17 @@ namespace ESConfEditor
 
             if(systemList.Items.Count == 0)
             {
-                if (systemList.Items.Count == 0)
-                {
-                    buttonMoveUp.IsEnabled = false;
-                    buttonMoveDown.IsEnabled = false;
-                    buttonCopy.IsEnabled = false;
-                    buttonRemove.IsEnabled = false;
-                    textBoxFullName.IsEnabled = false;
-                    textBoxName.IsEnabled = false;
-                    textBoxPath.IsEnabled = false;
-                    textBoxExt.IsEnabled = false;
-                    textBoxCommand.IsEnabled = false;
-                    textBoxPlatform.IsEnabled = false;
-                    textBoxTheme.IsEnabled = false;
-                }
+                buttonMoveUp.IsEnabled = false;
+                buttonMoveDown.IsEnabled = false;
+                buttonCopy.IsEnabled = false;
+                buttonRemove.IsEnabled = false;
+                textBoxFullName.IsEnabled = false;
+                textBoxName.IsEnabled = false;
+                textBoxPath.IsEnabled = false;
+                textBoxExt.IsEnabled = false;
+                textBoxCommand.IsEnabled = false;
+                textBoxPlatform.IsEnabled = false;
+                textBoxTheme.IsEnabled = false;
 
                 currentIndex = 0;
                 return;
@@ -165,42 +162,49 @@ namespace ESConfEditor
 
         private void textBoxFullName_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].fullname = textBoxFullName.Text;
             changesMade = true;
         }
 
         private void textBoxName_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].name = textBoxName.Text;
             changesMade = true;
         }
 
         private void textBoxPath_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].path = textBoxPath.Text;
             changesMade = true;
         }
 
         private void textBoxExt_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].extension = textBoxExt.Text;
             changesMade = true;
         }
 
         private void textBoxCommand_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].command = textBoxCommand.Text;
             changesMade = true;
         }
 
         private void textBoxPlatform_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].platform = textBoxPlatform.Text;
             changesMade = true;
         }
 
         private void textBoxTheme_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (esConf.SystemObjects.Count == 0) return;
             esConf.SystemObjects[this.currentIndex].theme = textBoxTheme.Text;
             changesMade = true;
         }
@@ -271,6 +275,17 @@ namespace ESConfEditor
             systemList.Items.RemoveAt(this.currentIndex);
             SelectSystemObject(Temp -1);
             changesMade = true;
+
+            if(systemList.Items.Count == 0)
+            {
+                textBoxFullName.Text = "";
+                textBoxName.Text = "";
+                textBoxPath.Text = "";
+                textBoxExt.Text = "";
+                textBoxCommand.Text = "";
+                textBoxPlatform.Text = "";
+                textBoxTheme.Text = "";
+            }
         }
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
@@ -313,6 +328,21 @@ namespace ESConfEditor
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void textBoxFullName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.Home || e.Key == Key.End)
+                return;
+
+            int pos = textBoxFullName.CaretIndex;
+
+            systemList.Items.Insert(this.currentIndex+1, textBoxFullName.Text);
+            systemList.Items.RemoveAt(this.currentIndex);
+            SelectSystemObject(this.currentIndex+1);
+            
+            textBoxFullName.Focus();
+            textBoxFullName.CaretIndex = pos;
         }
     }
 }

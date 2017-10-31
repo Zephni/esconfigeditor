@@ -10,7 +10,7 @@
         <ListBox x:Name="systemList" HorizontalAlignment="Left" Width="250" VerticalContentAlignment="Stretch" SelectionChanged="systemList_SelectionChanged" Margin="0,0,0,148"/>
         <StackPanel HorizontalAlignment="Left" Height="397" Margin="271,10,0,0" VerticalAlignment="Top" Width="493">
             <Label x:Name="labelFullName" Content="Full name" Padding="0,5"/>
-            <TextBox x:Name="textBoxFullName" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxFullName_TextChanged"/>
+            <TextBox x:Name="textBoxFullName" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxFullName_TextChanged" KeyUp="textBoxFullName_KeyUp"/>
             <Label x:Name="labelName" Content="Name" Padding="0,5"/>
             <TextBox x:Name="textBoxName" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxName_TextChanged"/>
             <Label x:Name="labelPath" Content="Path" Padding="0,5"/>
