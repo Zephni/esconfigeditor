@@ -1,0 +1,14 @@
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Debug\ESConfEditor.exe.config
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Debug\ESConfEditor.exe
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\bin\Debug\ESConfEditor.pdb
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.csprojResolveAssemblyReference.cache
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\MainWindow.g.cs
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\App.g.cs
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor_MarkupCompile.cache
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor_MarkupCompile.lref
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\MainWindow.baml
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.g.resources
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.Properties.Resources.resources
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.csproj.GenerateResource.Cache
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.exe
+c:\users\craig.dennis\documents\visual studio 2015\Projects\ESConfEditor\ESConfEditor\obj\Debug\ESConfEditor.pdb
