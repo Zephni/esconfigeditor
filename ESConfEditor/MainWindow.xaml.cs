@@ -253,18 +253,22 @@ namespace ESConfEditor
             systemList.Items.Insert(this.currentIndex+1, systemObject.fullname);
             esConf.SystemObjects.Insert(this.currentIndex+1, systemObject);
             SelectSystemObject(this.currentIndex+1);
+
+            textBoxFullName.Focus();
+            textBoxFullName.CaretIndex = textBoxFullName.Text.Length;
+
+            changesMade = true;
         }
 
         private void buttonAddNew_Click(object sender, RoutedEventArgs e)
         {
-            if (this.currentIndex == 0)
-                this.currentIndex = -1;
-
             SystemObject newObject = new SystemObject();
             newObject.fullname = "New item";
+            systemList.Items.Insert(this.currentIndex + 1, newObject.fullname);
             esConf.SystemObjects.Insert(this.currentIndex+1, newObject);
-            systemList.Items.Insert(this.currentIndex+1, newObject.fullname);
             SelectSystemObject(this.currentIndex+1);
+            textBoxFullName.Focus();
+            textBoxFullName.CaretIndex = textBoxFullName.Text.Length;
             changesMade = true;
         }
 
@@ -337,9 +341,11 @@ namespace ESConfEditor
 
             int pos = textBoxFullName.CaretIndex;
 
+            int Temp = this.currentIndex;
+
             systemList.Items.Insert(this.currentIndex+1, textBoxFullName.Text);
             systemList.Items.RemoveAt(this.currentIndex);
-            SelectSystemObject(this.currentIndex+1);
+            SelectSystemObject(Temp);
             
             textBoxFullName.Focus();
             textBoxFullName.CaretIndex = pos;

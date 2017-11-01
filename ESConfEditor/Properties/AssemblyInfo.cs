@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ESConfEditor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Visually edit the es_systems.xml file for EmulationStation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Craig Dennis")]
 [assembly: AssemblyProduct("ESConfEditor")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

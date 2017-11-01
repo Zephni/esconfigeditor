@@ -29,7 +29,7 @@
                 <TextBox x:Name="textBoxCommand" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxCommand_TextChanged"/>
                 <Label x:Name="labelPlatform" Content="Platform" Padding="0,5"/>
                 <TextBox x:Name="textBoxPlatform" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxPlatform_TextChanged"/>
-                <Label x:Name="labelTheme" Content="Platform" Padding="0,5"/>
+                <Label x:Name="labelTheme" Content="Theme" Padding="0,5"/>
                 <TextBox x:Name="textBoxTheme" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxTheme_TextChanged"/>
             </StackPanel>
         </Grid>
