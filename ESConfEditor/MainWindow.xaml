@@ -13,10 +13,9 @@
         <Button x:Name="buttonCopy" Content="Copy" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top" Width="116" Height="50" Padding="3" FontSize="16" Click="buttonCopy_Click"/>
         <Button x:Name="buttonAddNew" Content="Add new" HorizontalAlignment="Left" Margin="134,370,0,0" VerticalAlignment="Top" Width="116" Height="50" Padding="3" FontSize="16" Click="buttonAddNew_Click"/>
         <Button x:Name="buttonRemove" Content="Remove" HorizontalAlignment="Left" Margin="10,487,0,0" VerticalAlignment="Top" Width="240" Height="50" Padding="3" FontSize="16" Click="buttonRemove_Click"/>
-        <Button x:Name="buttonSave" Content="Save all changes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="512" Height="50" Padding="3" FontSize="16" Click="buttonSave_Click" Margin="260,428,0,0"/>
-        <Button x:Name="buttonOpenXML" Content="Open .xml" HorizontalAlignment="Left" VerticalAlignment="Top" Width="512" Height="50" Padding="3" FontSize="16" Click="buttonOpenXML_Click" Margin="260,487,0,0"/>
-        <Grid HorizontalAlignment="Left" Height="409" Margin="260,10,0,0" VerticalAlignment="Top" Width="512" Background="#FFFFFF">
-            <StackPanel HorizontalAlignment="Left" Height="397" Margin="10,0,0,0" VerticalAlignment="Top" Width="493">
+        <Button x:Name="buttonSave" Content="Save all changes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="512" Height="50" Padding="3" FontSize="16" Click="buttonSave_Click" Margin="260,487,0,0"/>
+        <Grid HorizontalAlignment="Left" Height="468" Margin="260,10,0,0" VerticalAlignment="Top" Width="512" Background="#FFFFFF">
+            <StackPanel HorizontalAlignment="Left" Height="458" Margin="10,0,0,0" VerticalAlignment="Top" Width="493">
                 <Label x:Name="labelFullName" Content="Full name" Padding="0,5"/>
                 <TextBox x:Name="textBoxFullName" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxFullName_TextChanged" KeyUp="textBoxFullName_KeyUp"/>
                 <Label x:Name="labelName" Content="Name" Padding="0,5"/>
@@ -31,7 +30,9 @@
                 <TextBox x:Name="textBoxPlatform" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxPlatform_TextChanged"/>
                 <Label x:Name="labelTheme" Content="Theme" Padding="0,5"/>
                 <TextBox x:Name="textBoxTheme" Height="28" TextWrapping="Wrap" Text="" Padding="3,2,3,0" FontSize="16" TextChanged="textBoxTheme_TextChanged"/>
+                <Label x:Name="labelNotes" Content="Notes" Padding="0,5"/>
             </StackPanel>
+            <TextBox x:Name="TextBoxNotes" HorizontalAlignment="Left" Height="53" Margin="10,405,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="492" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextChanged="TextBoxNotes_TextChanged"/>
         </Grid>
 
     </Grid>

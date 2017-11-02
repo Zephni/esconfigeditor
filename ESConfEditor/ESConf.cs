@@ -54,6 +54,8 @@ namespace ESConfEditor
                 systemObject.command = xmlNode.SelectSingleNode("command").InnerText;
                 systemObject.platform = xmlNode.SelectSingleNode("platform").InnerText;
                 systemObject.theme = xmlNode.SelectSingleNode("theme").InnerText;
+                if(xmlNode.SelectSingleNode("notes") != null)
+                    systemObject.notes = xmlNode.SelectSingleNode("notes").InnerText;
                 systemObjects.Add(systemObject);
             }
 

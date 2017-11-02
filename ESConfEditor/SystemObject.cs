@@ -15,5 +15,6 @@ namespace ESConfEditor
         public string command;
         public string platform;
         public string theme;
+        public string notes;
     }
 }

@@ -62,6 +62,7 @@ namespace ESConfEditor
                 textBoxCommand.IsEnabled = false;
                 textBoxPlatform.IsEnabled = false;
                 textBoxTheme.IsEnabled = false;
+                TextBoxNotes.IsEnabled = false;
 
                 currentIndex = 0;
                 return;
@@ -79,6 +80,7 @@ namespace ESConfEditor
                 textBoxCommand.IsEnabled = true;
                 textBoxPlatform.IsEnabled = true;
                 textBoxTheme.IsEnabled = true;
+                TextBoxNotes.IsEnabled = true;
             }
 
             systemList.SelectedIndex = Number;
@@ -100,6 +102,7 @@ namespace ESConfEditor
             textBoxCommand.Text = currentSystemObject.command;
             textBoxPlatform.Text = currentSystemObject.platform;
             textBoxTheme.Text = currentSystemObject.theme;
+            TextBoxNotes.Text = currentSystemObject.notes;
         }
 
         public void SaveChanges()
@@ -140,6 +143,10 @@ namespace ESConfEditor
 
                 el = newDocument.CreateElement("theme");
                 text = newDocument.CreateTextNode(systemObject.theme);
+                el.AppendChild(text); systemElement.AppendChild(el);
+
+                el = newDocument.CreateElement("notes");
+                text = newDocument.CreateTextNode(systemObject.notes);
                 el.AppendChild(text); systemElement.AppendChild(el);
 
                 systemList.AppendChild(systemElement);
@@ -209,6 +216,13 @@ namespace ESConfEditor
             changesMade = true;
         }
 
+        private void TextBoxNotes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (esConf.SystemObjects.Count == 0) return;
+            esConf.SystemObjects[this.currentIndex].notes = TextBoxNotes.Text;
+            changesMade = true;
+        }
+
         private void buttonMoveUp_Click(object sender, RoutedEventArgs e)
         {
             if (systemList.SelectedIndex > 0)
@@ -249,6 +263,7 @@ namespace ESConfEditor
             systemObject.command = esConf.SystemObjects[this.currentIndex].command;
             systemObject.platform = esConf.SystemObjects[this.currentIndex].platform;
             systemObject.theme = esConf.SystemObjects[this.currentIndex].theme;
+            systemObject.notes = esConf.SystemObjects[this.currentIndex].notes;
 
             systemList.Items.Insert(this.currentIndex+1, systemObject.fullname);
             esConf.SystemObjects.Insert(this.currentIndex+1, systemObject);
@@ -289,6 +304,7 @@ namespace ESConfEditor
                 textBoxCommand.Text = "";
                 textBoxPlatform.Text = "";
                 textBoxTheme.Text = "";
+                TextBoxNotes.Text = "";
             }
         }
 
